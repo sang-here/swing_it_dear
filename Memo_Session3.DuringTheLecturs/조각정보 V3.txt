@@ -31,7 +31,8 @@ UV 매핑: 모델링이 완료되면 벌 메쉬에 UV 매핑을 적용해야 합
 
 (unreal groom hair plug in으로 헤어도 만들 수 있음)
 
-
+https://obsproject.com/ko  OBS 녹화
+https://www.maxon.net/ko/zbrush?srsltid=AfmBOoop8okLvIXv5gTlgTUwPVpLoYbKgIJb6Yv8w4ftsOBrgsSdFKtI    ZBrush
 https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-sequencer-movie-tool-overview    Sequencer
 https://www.adobe.com/kr/products/substance3d/apps/painter.html        Substance 3D Painter
 https://www.adobe.com/products/substance3d/apps/painter.html?sdid=JZBJVTGW&mv=search&mv2=paidsearch&gad_source=1&gad_campaignid=20396750522&gbraid=0AAAAADraYsKq_kIf2CxmRi6wQDFRlsWdM&gclid=Cj0KCQjw3OjGBhDYARIsADd-uX6u2JheQzEYKxiT7wfZ-i2s7WS2aqP4YBux1PrsfArmL8flt2VqXo0aApKuEALw_wcB

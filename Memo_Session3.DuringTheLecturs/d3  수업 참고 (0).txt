@@ -1,0 +1,116 @@
+<언리얼 short film, Banished>
+
+사람 시선은 자연스럽게 뾰족한 쪽이 가르키는 방향으로 간다 (실험 결과임, 위험 회피 및 가르키는 방향을 보는 생존 본능으로 추정)
+
+(주요한 씬들에서 컷수가 몇 개인지를 파악함으로써 분석할 수 있음)
+
+-----
+-----
+
+<<<모델링>>>
+
+subdivision(super smooth)에서 각을 살리기 위해 하는 bevel의 경우, bevel 조각 수가 더 많을 수록, 그 사이가 더 좁을 수록, 더 각지게 나옴 
+
+---
+
+<<칼 만들기>>
+
+<칼 상단 만들기>
+
+i, insert 후, 디테일에서 boundary 설정 체크 끄면, 피봇 방향으로 모임
+
+두 vertices 잡고, 우클릭 j(connect vertex path) = creating edges
+
+---
+
+<칼 하단 만들기>
+
+(Shift+tab으로 snap의 on&off 할 수도 있지만, snap 꺼진 상태에서, 예컨대 vertex 하나 잡고 ctrl 누른 상태로 움직이면, snap 켜진 상태로 이동해짐)
+
+(mirror의 clipping 키면, 면은 scale up해도 mirror 기준으로 넘어가지 않음)
+
+
+---
+---
+
+<<방패 만들기>>
+
+1. uv 스피어 회전 - 반갈 된 스피어의 둘레 끝 edges 잡고 - vertex 창에서 - n, new egde&face from vertices,f (=반갈 면 채우기) 
+
+2. shift + alt 누른 상태로 edges 눌러가며, 방패 겉면 일부들 잡아내고, extrude
+
+3. 그다음 손잡이 만들기, then shade auto smooth
+
+
+(edge모드 시, 클릭: ctrl + alt = 가로 선들 / alt = 세로 선들 다 잡기)
+(hide는 OB mode / Edit mode 둘다 따로 따로 적용 됨)
+
+----
+
+<smooth>
+
+( edit mode에서 각각의 면 shade flat <-> shade smooth --> OB mode에서 shade auto smooth (by angle) )
+(mark sharp는 mirror apply 전에 적용하는 것이 작업 관계상 편함)
+(폴리곤이 적은 것과 많은 것은 스타일의 차이)
+
+----
+----
+
+<<<LoopTools>>>
+
+edit - preference - get extensions - LoopTools intall
+
+--
+
+<<라디오 만들기>>
+(apply를 하지 아니 하여서, insert(i)시 불균일하게 들어감. / apply를 경우에 따라 예외적으로 일부러 유지하는 경우도 있겠으나, 조절하는 편이 좋음)
+
+<원 만들기>
+(면들 잡고 - 우클릭 loop tools - circle -> 원 만들기 툴)
+
+--
+
+<버튼 만들기>
+(원하는 면들 잡고 i, insert 디테일에서 individual 체크하면, 각각 insert 됨)
+
+Transform pivot point - active element (=마지막 선택한 element 기준)
+
+(** modifier - subdivision하고 insert한 면이 너무 뭉특해지는 것을 막기위해, bevel을 할 수 있는데, 이때 insert된 면의 edges들은 꼭지점이 연결되여야 오류가 없고, 연결된 edges들도 bevel을 같이 주어야 아주 sharp하고 깔끔하게 나옴. / 그리고 면이 빨갛게 낳오는 경우 겹쳐서 오류가 나오는 경우로 이 경우를 꼭 회피해야 함. 나중에 수정하기 매우 어려워질 수 있음.)
+
+
+--
+
+(delete != dissolve (dissolve는 해당 선택된 것과 vertices만 지우나, delete은 연결된 친구들 같이 지움))
+
+--
+
+<시간 글자 라디오 넣기>
+shift + a - text (edit mode에서 글자 수정)
+text - data 에서 font & geometry (extrude=두꼐/bevel-depth=통통함) 수정
+
+text 다 하면 마지막에 이따가 convert to mesh 가능
+
+--
+
+<라디오에 넣을 스피어 만들기 deform - cast>
+
+큐브 - subdivision (generate - modifier) - cast (deform - modifier)
+
+Cast = It pushes or pulls vertices so that the shape of the object moves toward a perfect sphere, cube, or cylinder, depending on the selected Cast Type.
+
+--
+<<modifiers - radio wires>>
+
+<generate - decimate>
+decimate - unsubdivide
+(밑에 face count 보면 줄어드는 거 보임)
+
+<generate -Wireframe>
+edge들 따라서 wire 생성
+
+<generate -Bevel>
+와이아 평평하게 해줌 (segment(2의 제곱)와 angle 조절 가능)
+
+---
+
+
