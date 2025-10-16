@@ -105,10 +105,10 @@ Cast = It pushes or pulls vertices so that the shape of the object moves toward 
 decimate - unsubdivide
 (밑에 face count 보면 줄어드는 거 보임)
 
-<generate -Wireframe>
+<generate - Wireframe>
 edge들 따라서 wire 생성
 
-<generate -Bevel>
+<generate - Bevel>
 와이아 평평하게 해줌 (segment(2의 제곱)와 angle 조절 가능)
 
 ---

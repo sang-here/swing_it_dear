@@ -1,0 +1,139 @@
+<short film, ASC’s THE EYE>
+https://www.youtube.com/watch?v=0kXWNfW9ia8
+
+- 수미상관 구조
+- look and track
+- 조명 변화로 시간 변화의 인상을 줌.
+- 같은 쇼트에서 초점 조절로 새로운 씬 생성
+- 주인공의 시선 처리
+(같은 씬 연속 반복시 너무 흐름이 쳐짐, 중간 중간 여러 각도와 거리에서 같은 씬 내에서도 환기)
+- 소총의 획득과 소유가 아래서 위로 수직 등장 => 위계적 구도로 등장 like 고딕 양식
+- 얼굴 클로즈업 시, 이마를 가렸음
+- 카메라가 미리 가서 있는 경우 기다렸다는 듯한 장면이 나오는 효과가 더 생김
+- 아 맞다 스캐너 있지 -> 잠시 블랙 아웃 후 정적 -> 자연스럽게 바로 스캐너 뒤에서 카메라 등장
+- 클로접 전에 정면 후면 반복 후 크로접
+
+(facial expression 스킵하려고 걍 헬멧 씌우는 경우도 있음)
+(ACS 는 Fab에서 다운 가능)
+
+--
+
+<BUTTY - Animated Short Film | Blender>
+
+<CGI Animated Short Film "Sticking Seafarer" by Jeremy Ross>
+카와이
+
+--
+
+Goty(Great of the Year) 라는 게임 어워즈가 있음. 게임 레퍼런스가 있을 수 있음. 
+
+---
+---
+
+<<Radio - UVedit>>
+
+선택한 오브젝트의 edit mode에서 all 선택 후, u u 대신 uv창에서 unwrap - smart UV Project (mark seam을 어느정도 자동으로 해줌)도 사용 가능
+
+---
+
+<<Radio - Shading>>
+Shading에서 각 OB의 material 미시 수정 가능
+
+<texture에서 이미지 import>
+shading - add 창 texture - image texture(원하는 이미지 추가)
+선택 된 OB에서 텍스쳐 이미지를 shading에 추가하였으면, UV edit에서 해당 OB의 텍스쳐의 이미지를 추가하여서 알 맞게 조정
+
+
+----
+-----
+-----
+
+
+<<<시퀀서>>>
+
+Assetsville Town에서 다운로드
+
+캐릭터는 믹사모 중심으로 할 것(메타휴먼은 무거워서 안 돌아 갈 것같음)
+캐릭터의 애니메이션은 믹사모에서 가져온 것으로 리타겟팅해서 쓸 것 (시간 관계 하나하나 애니메이션 만들기 어려울 것 같음)
+
+(포폴을 영상으로 하는 이유는 결국 그것에서 모델링과 엔진 이해, 최적화를 다 유추하여 볼 수 있기 떄문)
+
+---
+
+(언리얼 f = Blender . (look at))
+
+<머티리얼 만들기>
+
+scalar (1, 2번 누르고 클릭) 
+
+RadialGradientExponential 노드
+(gradient = 변화도[증감률]/경사도, 기울기(gradient 그레이디언트[*]) 또는 경도란 벡터 미적분학에서 스칼라장의 최대의 증가율을 나타내는 벡터장을 뜻한다.)
+<- 백터미적분학 간단 이해 ㄱㄱ wikipedia*
+
+MakeFloat4 노드 (=베이스 컬러에 벡터값들로 연결)
+
+(TA:Technical Artist는 다양한 머티리얼을 만들줄 앎, 최적화도 함, 모델러나 애니메이터 특화도 있음)
+----------
+
+<시퀀서 생성>
+레벨에서, 윗창에서 add level sequencer 혹은 컨텐츠 드로어에서 우클릭 후 level sequencer 추가 like BP Actors
+(레벨에서 add 하면 월드에 인스턴스가 자동으로 배치됨. 드로어에서 더블 클릭하면 시퀀서 노드가 꺼져도 다시 킬 수 있음)
+
+<시퀀서 이해>
+시퀀스 edit - 왼쪽 창 - actor to sequencer에 필요한 인스턴스를 추가(월드에서 해당 인스턴스를 클릭한 상태면 가장 위에 올라와 있음 = outliner의 순서와 같음)
+
+(view range time 에서 ctrl 휠로 zoom in/out 단축키 가능)
+
+시퀀서에 물체 말고도, 조명도 actor to sequencer 가능
+
+-----
+
+<<시퀀서 창의 이해>>
+
+- auto add key 켜두면, transform 변동시 자동으로 저장됨
+
+- camera cut track (add에도 있고, 소유 상단 창에도 있음)
+
+- fps = 프레임 (기본값=30 / 10초 짜리 영상이면 300개의 이미지가 생김)
+
+(영상은 프레임(이미지)의 연속, 이미지를 수정하면 영상이 수정됨)
+
+-오른쪽 상단 소유 창에 해당 시퀀서 이름 나와 있음
+
+---
+
+<sequencer curve>
+- 상단 창 sequencer curve에서 연결된 키값들의 변화 연결을 가시적으로 수정할 수 있음
+
+(뷰포트에서 가시적으로 수정할 떄도 있지만, 엄밀한 값으로 조정하는 경우도 매우 많음, 이때 sequencer curve를 이용하면 효과적임)
+(두 점을 연결하는 곡선을 exponential 모양으로 만들면 급격한 변화를 연출할 수 있음)
+
+(sequencer curve에서 두점을 잡고, sequencer curve 내의 상단 창에서 interpolation(보간) 옵션들로 편하게 수정할 수 있음)
+
+---
+
+- 하단 play 창에서 play loop을 키고 끌 수 있음
+
+(null 값의 시간과 위치도 지정해주어놔야 함)
+
+--
+
+(시퀀서 창 이름 옆에 *가 있으면 저장되지 아니함. ctrl + shift + s = save all 하면 사라짐)
+(액터 잡고, 월드에서 g누르면 game mode on / sequencer에서 움직이는 선 보임)
+
+-----
+
+R (Red): 빨간색 성분
+G (Green): 초록색 성분
+B (Blue): 파란색 성분
+A (Alpha): 알파(투명도) 성분
+
+즉, Constant Vector4는 RGBA 색상값을 한 번에 정의하는 벡터입니다.
+
+Base Color는 보통 RGB만 사용되지만, Vector4는 색상 + 알파값까지 포함된 포괄적인 데이터 타입입니다.
+머티리얼에서 Base Color에 연결할 때는 R, G, B 값만 사용되고,
+**A(Alpha)**는 무시됩니다 — 즉, base color에는 반영되지 않습니다.
+
+하지만 이 A값을 따로 다른 곳에 사용할 수는 있습니다.
+
+---
