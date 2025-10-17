@@ -1,0 +1,242 @@
+<<short film, left 4 Dead intro>>
+
+-----
+-----
+
+<<short film, tuk tuk tango>>
+물체에 생명을
+
+---
+---
+
+<<short film, CALL OF DUTY INFINITE WARFARE Gameplay Walkthrough Part 1 Campaign FULL GAME [4K 60FPS PS5>>
+
+<대비>
+
+-미디움 샷 - 무릎 부근까지 나옴
+-차가운 색감(콘크리트, 대리석, 철)과 따듯한 색감(나무, 원목)의 대비
+-차가운 배경과 햇빛 받아 따듯한 사람들
+- 공간, 색상, 대사의 대비가 동시에 이루어져 나오는 씬
+
+( 하이라이트 씬은 1000이 관여된 씬임을 <- 그냥 만들지 않음, 여러 개선이 반영됨 )
+
+---
+
+<예상과 시간차 공격/변칙>
+
+- 두 비행 편대의 교차와 그 교차점을 지나 계단을 내려가는 main character
+- 두개의 다른 공간 사이 변곡점 부근에 npc들을 두어 진행 방향에 저항을 줌 -> 새공간 도달 전에 hardship을 주어, 극복 이후 도달하는 새 공간에서 더 큰 성취감을 줌 (커튼 효과)
+
+--
+
+<가이던스>
+
+- 배경 터렛의 이동 방향도 연출에 일부
+- 일부러 가려는 방향이 보이지 않는 왼쪽 문을 열어서 기대감 추가 고조
+
+- 진행 방향을 유도하는 다양한 장치들이 있음(벽면의 철망, 흰색 프레임)
+- 오렌지 가이던스 오브젝트들을 진행 유도로들에 일부로 배치 
+
+---
+
+<원근감 / 환각 방지>
+
+- 너무 멀리 있는 거대한 것의 크기감을 인식시키기 위해 일부러 가까이나 연결되게 비교되는 오브젝트를 배치함 (ex 수직 전봇대들과 멀리 있는 비행기들의 관계)
+- 일부로 distraction을 두어 시선을 가져감
+
+
+--
+
+<가이던스>
+
+- 갈 방향을 먼저 나아가주는 NPC들
+- 가면 안 되는 방향을 표시해주는 쨍한 색감의 철창들과 오브젝트들
+- 1점 투시의 배치
+
+---
+
+<조명>
+
+- 햇빛이 빛주는 부분과 그림자진 부분들로 공간 분리감 조성
+- 조명 집중으로 대상 오브젝트 강조
+- 캐릭터들의 움직임들이 자연스럽게 조명이 얼굴을 잘 비추어주는 방향으로 이동함
+
+(한 컷 한 컷, 중요한 컷들은 특히, 사진처럼 명화처럼, 드라마 처럼 구성)
+
+---
+
+<격추 씬>
+
+- aim lock 시 1점 투시 구성
+- 정면 측면 바로 뒤따라가기 카메라 워크
+
+----
+----
+----
+
+
+<<과제: short film, BACK TO DINOSAUR ISLAND 1 & 2 VR (FREE on Steam) // Oculus + Xbox Gamepad // GTX 1060 (6GB), 2~5분 analize>>
+
+(가이던스 화면구성, 점선면 볼륨, 대비, 강조점)
+
+
+1. 숲인데, 돌이 많고 스산한 게, 전체적 색감이 차가움.
+   상하가 2분할 된 것 처럼 보이고, 그 수평선을 따라 공룡과 잠자리가 순서대로 등장함.
+
+2. 잠자리의 비행을 따라 자연스럽게 시선이 이동함 (가이던스) 
+   잠자리가 뚜들겨 패면 색감 변화로 그 충격을 표현함 (대비, 강조)
+
+3. 색감이 전채적으로 흐리멍텅한데, 수평선 부근에서 다시 등장하는 공룡은 비교적 쨍함. (이동 방향 가이던스, 강조)
+   공룡 등장 부근 앞 양옆으로 시야를 막는 것들이 있어, 공룡 등장에 있어 예측가능성을 낮게 만듦. (긴장감 조성)
+
+4. 티라노가 등장해서 접근함. 이 때 나의 주위를 둘러싼 알들이 나의 영역임을 인식시키는 동시에 이 알 주인이 사실 이 티라노일 
+   수 있음을 인식 시킴. 주어진 나의 고유 영역의 주인이 사실 티라노일 것 같음. 
+
+5. 다행히 다른 색감있는 티라노가 나타나서, 내 앞에 티라노를 데리고 감. 뻥 뚫린 것 같은 주변 시야와 달리 내가 머무는 장소는 
+   위 천장 부근에 풀도 있고 뒤도 막혀서 안정감이 더 듦. 근데 갑자기 정적이던 알이 움직이기 시작. (대비)
+
+---
+
+<By T>
+
+동굴 = 원 -> 편안함
+
+잠자리의 공격 = 상호작용 가능함과 위험 가느성을 알려줌
+
+뾰족한 물체들이 가르키는 방향을 보게 되어 있음
+
+s자 길을 두어 공간감을 강조 / 겹겹이 겹쳐 있음을 강조
+여러 비교체를 두어 공간감과 스케일감을 부여함
+
+빛이 주요 물체를 강조함
+2분할 세트가 무대 플랫폼처럼 작동함. 
+천장 풀의 뾰족한 끝들이 다가오는 대상을 강조함
+
+
+--
+(우리 건물의 바닥 타일도 보면 동선을 유도함)
+----
+----
+----
+
+
+<<<UE: Sequencer>>>
+
+(UE는 cm 단위, 기본 cube는 1m = 100cm)
+
+----
+<<sequencer curve>>
+
+<키 추가와 조정>
+sequencer curve에서도 각각의 point들에 대한 시간과 값도 타이핑으로 조절 가능(sequencer curve에서 상단 창에서 insert 가능)
+
+sequencer curve에서 우클릭 후 add key 가능
+
+--
+
+<sequencer curve 화면 조정>
+- ctrl + 휠로 zoom in/out 하나 시간 부분과 value 부분 창에 따라 다른 영역이 zoom 됨
+- zoom to fit (f 혹은 value 창에서 우클릭 후 선택)하면 앵간 맞추어짐
+
+--
+
+<월드에 배치된 sequencer actor의 디테일 설정>
+
+auto play 체크 후, loop 를 indefinitely로 해두면, 
+sequencer를 play하지 않아도, 게임 플레이시, 자동으로 sequencer가 play되는 채로 시작함.
+
+---
+
+<sequencer curve 두 키의 연결 수정>
+
+두 키들 잡고 상단 창에서 interpolation(보간)을 linear로 수정 (=균일 연결)
+
+(키 간 연결을 잘 조정하면, 부딫힌 뒤 통 튀는 듯한 모습도 구현 가능)
+
+
+(오브젝트 옆에 핀 꽂으면 curves들이 고정되서 보임)
+
+---
+---
+---
+
+
+<<<sequencer를 이용하여 실시간으로 변하는 material 만들기>>>
+
+(sequencer, material, parameter collection)
+
+---
+
+<<parameter collection>>
+
+컨텐츠 드로어 - 우클릭 - material - material parameter collection
+
+(material 에서 vector는 RGB + A / location 에선 XYZ)
+
+(scalar 두개 생성하고 추후 두개를 각각의 파라미터로 머티리얼 노드로 소환할 것)
+(만든 scalar의 value를 변경하면 불러진 곳으로 자동 연결 전송됨)
+
+----
+----
+
+<<material>>
+
+노드의 값이 궁금하면, node 우클릭 후 node preview 보면 됨
+
+---
+
+<파라미터 컬렉션 불러오기>
+
+우클릭 - 검색 - collection parameter - 생성
+해당 노드의 디테일 창 - 만들어 둔 parameter collection불러오기
+
+(D5_NewMaterialParameterCollection 에서 설정하고 저장한 value가 그대로 불러옴)
+
+----
+
+<시퀀서에서 material의 param 수정되게 하기 by material parameter collection track>
+
+sequencer - add - material parameter collection track
+
+material parameter collection track에 각각의 파라미터 추가하고, sequencer curve에서 point들 지정해주기 (start & end가 꼭 있게 하구예) (value는 0~1만 존재함, material param의 scalar 값이니)
+
+
+---
+---
+---
+
+<<<카메라 워킹>>>
+
+
+<카메라 액터 생성하기>
+
+level - all classes - camera actor (월드에서 오브젝트 잡고 우클릭 후 snap view to object로 이동 가능)
+
+OR
+
+
+
+----
+
+<카메라 워크 부여 및 확인>
+
+CameraActor - detail - Auto Activate for Player - disabled -> Player0 (월드 플레이시 캐릭터 말고 카메라 시점으로 등장)
+
+sequencer - add - camera actor & camera cuts (우리는 sequencer curve에서 camera actor만 가지고 놀 것 일단)
+
+--------
+
+<camera cuts에 여러 카메라 연결하기>
+
+(lock to viewport 체크 선택하면 시뮬레이션 화면에서 camera cuts 볼 수 있음)
+sequencer - camera cuts - new binding
+
+
+---
+
+
+
+
+
+
+

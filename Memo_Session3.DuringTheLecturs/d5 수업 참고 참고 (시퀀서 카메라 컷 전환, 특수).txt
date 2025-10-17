@@ -1,0 +1,156 @@
+좋은 질문입니다! 언리얼 엔진의 **시퀀서(Sequencer)**에서 기본적으로 Camera Cut은 "하드 컷(hard cut)", 즉 즉시 전환 방식으로 작동합니다. 하지만 말씀하신 것처럼 **스무스하게 카메라 전환(fade, crossfade, 디졸브 등)**을 구현하고 싶다면, 몇 가지 방법을 통해 가능합니다.
+
+
+✅ 1. Fade In/Out 사용하기
+
+가장 간단한 방식은 **페이드 트랙(Fade Track)**을 이용해 카메라 전환 전후로 화면을 어둡게 했다가 다시 밝히는 것입니다.
+
+방법:
+
+시퀀서 열기
+Cinematic 카메라를 선택한 상태에서
++Track > Fade Track 추가
+트랙에 키를 찍어서 원하는 타이밍에 Alpha 1 → 0 또는 0 → 1로 설정
+
+예: 기존 카메라 → 화면 점점 어두워짐(Fade Out) → 카메라 컷 변경 → 화면 밝아짐(Fade In)
+
+이 방식은 흔히 영화나 게임 컷씬에서 사용하는 전형적인 페이드 전환 효과입니다.
+
+
+✅ 2. 포스트 프로세스 블렌딩(Post Process Blend)으로 디졸브 구현
+
+두 카메라 간의 전환을 디졸브 효과처럼 만들고 싶다면, 두 카메라 뷰를 동시에 비추고 블렌딩하는 방식으로 만들어야 합니다. 기본 시퀀서만으로는 직접 지원하진 않지만, 아래 방식으로 가능합니다.
+
+방법:
+
+두 카메라의 렌더링을 머티리얼로 처리하거나, 또는
+Blueprint + Render Targets를 활용해 두 카메라 뷰를 혼합
+혼합 비율을 Timeline 또는 시퀀서로 제어해서 디졸브 구현
+
+이건 좀 복잡한 방식이고, 일반적인 컷씬에는 잘 쓰이지는 않지만, 영화 스타일 컷을 원할 경우 가능합니다.
+
+
+✅ 3. 카메라 위치를 Lerp로 이동시키기 (하드 컷 대신)
+
+또 다른 방식은 하드 컷을 하지 않고, 카메라를 실제로 이동시켜서 다음 시점으로 부드럽게 이동하는 것입니다.
+
+방법:
+
+하나의 카메라만 사용
+Transform 트랙에 키프레임을 찍어서 위치 및 방향을 부드럽게 이동
+즉, "컷" 없이 시점이 자연스럽게 이동하는 효과
+
+이건 컷이 아니라 "트래킹샷", "패닝" 같은 카메라 무브 효과로, "스무스한 전환"이 가능
+
+
+✅ 보너스: 카메라 간 Blend 효과를 Blueprint로 제어
+
+Cine Camera 간의 부드러운 전환을 BP로 제어하려면:
+PlayerCameraManager->StartCameraFade(0.f, 1.f, 1.0f, FLinearColor::Black);
+
+
+또는 SetViewTargetWithBlend 함수를 이용해서 블렌드 타입 및 지속 시간 조절:
+APlayerController* PC = UGameplayStatics::GetPlayerController(this, 0);
+PC->SetViewTargetWithBlend(NewCameraActor, 1.5f, EViewTargetBlendFunction::VTBlend_Cubic);
+
+
+이 방식은 실시간/게임 플레이 카메라 전환에서 주로 사용되지만, 시퀀서 트리거로 호출할 수도 있음.
+
+----
+
+좋아요! "디졸브(Dissolve)" 효과처럼 두 카메라 뷰가 부드럽게 겹쳐지며 전환되는 효과를 구현하고 싶다면, 언리얼에서 기본 제공되는 Camera Cuts 트랙만으로는 안 되고, 약간의 Render Target과 머티리얼, 그리고 Blueprint가 필요해요.
+하지만 걱정 마세요. 생각보다 크게 어렵지 않게 구현 가능합니다. 아래에 전체 흐름을 정리할게요.
+
+🎬 목표
+
+A 카메라 → B 카메라 전환 시, A 카메라에서 B 카메라 뷰로 디졸브(겹치며 부드럽게 바뀜) 되는 효과 만들기.
+
+✅ 필요한 구성 요소
+요소	설명
+2개의 CineCameraActor	A와 B 뷰
+2개의 SceneCapture2D	각각 A/B 카메라 뷰를 Render Target에 출력
+2개의 Render Target	A/B 화면을 실시간 캡처
+디졸브 머티리얼	두 Render Target을 블렌드하는 머티리얼
+UMG 위젯	머티리얼을 화면에 표시 (Full Screen)
+Blueprint	블렌딩 파라미터를 제어 (시퀀서 또는 Timeline 사용 가능)
+🧱 Step-by-step 구현
+1. 카메라 2개와 SceneCapture2D 설정
+
+레벨에 CineCameraActor 2개 배치 (CamA, CamB)
+
+각각 SceneCapture2D 컴포넌트도 배치해서:
+
+CamA → SceneCapture2D_A → RenderTargetA
+
+CamB → SceneCapture2D_B → RenderTargetB
+
+SceneCapture2D 설정 팁:
+
+Capture Source: Final Color (LDR) in RGB
+
+Capture Every Frame: 체크됨
+
+각각 Render Target 생성 후 연결
+
+2. 디졸브 머티리얼 만들기
+
+Material Blend_RenderTarget (예시):
+
+Material Domain: User Interface
+
+Blend Mode: Opaque 또는 Translucent
+
+머티리얼 그래프 구조:
+
+2D Texture Sample Parameter x 2 (RT_A, RT_B)
+
+Scalar Parameter (BlendAmount) – 0.0 ~ 1.0
+
+Lerp 노드로 두 텍스처 블렌딩:
+
+Lerp(RenderTargetA, RenderTargetB, BlendAmount)
+→ Output to Emissive Color
+
+3. UMG 위젯 만들기
+
+새 UMG Widget Blueprint 생성 (e.g. WBP_DissolveTransition)
+
+Image 위젯 추가
+
+이미지의 Brush → 디졸브 머티리얼 인스턴스 적용
+
+위젯을 Viewport 전체에 꽉 차도록 설정
+
+4. 블루프린트로 제어 (Blend)
+
+머티리얼 인스턴스를 Dynamic Material Instance로 만들고, 블렌딩 파라미터(BlendAmount)를 조절
+
+// 예: Timeline 또는 시퀀서 이벤트로 BlendAmount를 0 → 1로 변경
+SetScalarParameterValue("BlendAmount", BlendValue);
+
+타이밍 팁:
+
+BlendAmount = 0 → A 카메라 뷰만 보임
+
+BlendAmount = 1 → B 카메라 뷰만 보임
+
+0.0 ~ 1.0 사이 → 부드럽게 디졸브 중
+
+5. 씬 카메라와 실제 플레이어 카메라 동기화
+
+게임플레이 카메라는 실제로는 A나 B 카메라를 바라보는 것처럼 유지되며,
+
+화면에는 Render Target의 디졸브 뷰가 보여지므로, 시각적으로는 자연스럽게 전환됨.
+
+✅ 보너스: 시퀀서에서 디졸브 제어
+
+위에서 만든 Blueprint의 BlendAmount를 시퀀서에서 직접 제어할 수 있습니다.
+
+Actor를 시퀀서에 넣고, BlendAmount를 Expose Variable로 만들면 시퀀서에서 키를 찍을 수 있어요.
+
+🔥 결과
+전환	결과
+CamA → CamB	자연스럽게 겹쳐지며 부드러운 디졸브 전환
+커스터마이징	속도, 곡선, 머티리얼 효과 다양하게 조절 가능
+
+
